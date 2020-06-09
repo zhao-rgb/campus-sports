@@ -18,11 +18,12 @@ import java.util.Map;
  * </p>
  *
  * @author zxl
- * @since 2020-06-08
+ * @since 2020-06-09
  */
 @RestController
 @RequestMapping("/sysCourse")
 public class SysCourseController {
+
     @Resource
     private SysCourseService sysCourseService;
 
@@ -32,7 +33,7 @@ public class SysCourseController {
         return sysCourseService.getCourseByType();
     }
 
-     //模糊查询
+    //模糊查询
     @GetMapping("/blurSelect")
     public List<SysCourse> blurSelectSysCourse(@Param("field") String field) {
         return sysCourseService.blurSelect(field);
