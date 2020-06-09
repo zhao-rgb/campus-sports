@@ -28,4 +28,10 @@ public class SysSportServiceImpl extends ServiceImpl<SysSportMapper, SysSport> i
         return sysSportMapper.getStepNumber(userId);
     }
 
+    @Override
+    public void insertSport(SysSport sportDto) {
+        sysSportMapper.insert(sportDto);
+    }
+
+
 }

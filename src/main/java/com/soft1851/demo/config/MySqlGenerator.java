@@ -77,9 +77,9 @@ public class MySqlGenerator {
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL)
                 .setDriverName("com.mysql.jdbc.Driver")
-                .setUrl("jdbc:mysql://localhost:3306/campus_sports?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai")
+                .setUrl("jdbc:mysql://rm-m5ee476bu350735gjeo.mysql.rds.aliyuncs.com:3306/campus_sports?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai")
                 .setUsername("root")
-                .setPassword("root");
+                .setPassword("XuNiit_#");
 
         AutoGenerator autoGenerator = new AutoGenerator();
         autoGenerator.setGlobalConfig(config)

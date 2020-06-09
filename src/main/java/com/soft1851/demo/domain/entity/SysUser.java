@@ -1,14 +1,15 @@
 package com.soft1851.demo.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -43,6 +44,16 @@ public class SysUser extends Model<SysUser> {
      */
     @TableField("user_name")
     private String userName;
+    /**
+     * 密码
+     */
+    @TableField("password")
+    private String password;
+    /**
+     * 加密盐
+     */
+    @TableField("salt")
+    private String salt;
 
     /**
      * 地址

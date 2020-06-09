@@ -15,5 +15,9 @@ import java.util.List;
  */
 public interface SysSportService extends IService<SysSport> {
 
+
     List<SysSport> stepNumber(int userId);
+
+    void insertSport(SysSport sportDto);
+
 }

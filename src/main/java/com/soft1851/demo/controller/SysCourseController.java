@@ -1,7 +1,7 @@
 package com.soft1851.demo.controller;
 
 
-import com.soft1851.demo.entity.SysCourse;
+import com.soft1851.demo.domain.entity.SysCourse;
 import com.soft1851.demo.service.SysCourseService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/sysCourse")
 public class SysCourseController {
-
     @Resource
     private SysCourseService sysCourseService;
 
@@ -38,5 +37,4 @@ public class SysCourseController {
     public List<SysCourse> blurSelectSysCourse(@Param("field") String field) {
         return sysCourseService.blurSelect(field);
     }
-
 }

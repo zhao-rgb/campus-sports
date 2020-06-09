@@ -1,14 +1,15 @@
 package com.soft1851.demo.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * <p>
@@ -48,13 +49,13 @@ public class SysSport extends Model<SysSport> {
      * 具体运动日期
      */
     @TableField("gmt_create")
-    private LocalDateTime gmtCreate;
+    private Timestamp gmtCreate;
 
     /**
      * 运动的时间
      */
     @TableField("sport_time")
-    private LocalDateTime sportTime;
+    private String sportTime;
 
     /**
      * 运动的距离

@@ -16,4 +16,5 @@ import java.util.List;
 public interface SysSportMapper extends BaseMapper<SysSport> {
 
     List<SysSport> getStepNumber(int userId);
+
 }
