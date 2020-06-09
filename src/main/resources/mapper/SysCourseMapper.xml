@@ -23,4 +23,14 @@
         id, course_name, avatar, local, type, lesson_number, time, fat_burning, difficulty, teacher_name, teacher_description, url
     </sql>
 
+    <insert id="batchInsert" parameterType="com.soft1851.demo.entity.SysCourse">
+        INSERT INTO sys_course VALUES
+        <foreach collection="courses" item="item" index="index" separator=",">
+            (#{item.id},#{item.courseName},#{item.avatar},#{item.local},
+            #{item.type},#{item.lessonNumber},#{item.time},
+            #{item.fatBurning},#{item.difficulty},#{item.teacherName},
+            #{item.teacherDescription},#{item.url})
+        </foreach>
+    </insert>
+
 </mapper>

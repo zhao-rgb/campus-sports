@@ -8,9 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Administrator
  */
 
+
+@SpringBootApplication
 // 扫描我们的mapper文件夹
 @MapperScan("com.soft1851.demo.mapper")
-@SpringBootApplication
 public class CampusSportApplication {
 
     public static void main(String[] args) {

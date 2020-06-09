@@ -1,5 +1,6 @@
 package com.soft1851.demo.service;
 
+import com.soft1851.demo.entity.SysCourse;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -20,5 +21,11 @@ class SysCourseServiceTest {
         for (Map<String, Object> map : maps) {
             System.out.println(map);
         }
+    }
+
+    @Test
+    void blurSelect() {
+        List<SysCourse> maps = sysCourseService.blurSelect("体能");
+        System.out.println(maps);
     }
 }

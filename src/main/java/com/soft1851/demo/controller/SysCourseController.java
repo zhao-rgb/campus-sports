@@ -1,13 +1,16 @@
 package com.soft1851.demo.controller;
 
 
-import com.soft1851.demo.common.ResponseResult;
+import com.soft1851.demo.entity.SysCourse;
 import com.soft1851.demo.service.SysCourseService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -23,9 +26,16 @@ public class SysCourseController {
     @Resource
     private SysCourseService sysCourseService;
 
+    //根据类型分类
     @GetMapping("/type")
-    public ResponseResult getByType(){
-        return ResponseResult.success(sysCourseService.getCourseByType());
+    public List<Map<String,Object>> getByType(){
+        return sysCourseService.getCourseByType();
+    }
+
+     //模糊查询
+    @GetMapping("/blurSelect")
+    public List<SysCourse> blurSelectSysCourse(@Param("field") String field) {
+        return sysCourseService.blurSelect(field);
     }
 
 }

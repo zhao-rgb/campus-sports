@@ -18,11 +18,11 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rm-bp1np46rt3na0655zlo.mysql.rds.aliyuncs.com:3306/campus_sports?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true
-    #    url: jdbc:mysql://rm-m5ee476bu350735gjeo.mysql.rds.aliyuncs.com:3306/cloud_music?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true
-    username: wl
-    #    password: XuNiit_#
-    password: 1QAZ!QAZ
+    #url: jdbc:mysql://rm-bp1np46rt3na0655zlo.mysql.rds.aliyuncs.com:3306/campus_sports?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true
+    url: jdbc:mysql://rm-m5ee476bu350735gjeo.mysql.rds.aliyuncs.com:3306/campus_sports?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true
+    username: root
+    password: XuNiit_#
+#    password: 1QAZ!QAZ
     hikari:
       # 最小连接数
       minimum-idle: 1
@@ -43,7 +43,7 @@ mybatis-plus:
   # mapper映射文件路径
   mapper-locations: classpath:mapper/*.xml
   # pojo类所在包路径
-  type-aliases-package: com.sofot1851.music.admin.domain.entity
+  type-aliases-package: com.sofot1851.demo.entity
   global-config:
     db-config:
       #主键类型：auto主键自增，input用户输入id，id_worker全局唯一的数字id，UUID全局唯一的UUID
