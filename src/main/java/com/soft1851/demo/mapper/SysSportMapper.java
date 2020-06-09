@@ -1,7 +1,9 @@
 package com.soft1851.demo.mapper;
 
-import com.soft1851.demo.entity.SysSport;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.soft1851.demo.domain.entity.SysSport;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface SysSportMapper extends BaseMapper<SysSport> {
 
+    List<SysSport> getStepNumber(int userId);
 }

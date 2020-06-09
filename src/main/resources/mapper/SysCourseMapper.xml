@@ -3,7 +3,7 @@
 <mapper namespace="com.soft1851.demo.mapper.SysCourseMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.soft1851.demo.entity.SysCourse">
+    <resultMap id="BaseResultMap" type="com.soft1851.demo.domain.entity.SysCourse">
         <id column="id" property="id" />
         <result column="course_name" property="courseName" />
         <result column="avatar" property="avatar" />
@@ -23,7 +23,7 @@
         id, course_name, avatar, local, type, lesson_number, time, fat_burning, difficulty, teacher_name, teacher_description, url
     </sql>
 
-    <insert id="batchInsert" parameterType="com.soft1851.demo.entity.SysCourse">
+    <insert id="batchInsert" parameterType="com.soft1851.demo.domain.entity.SysCourse">
         INSERT INTO sys_course VALUES
         <foreach collection="courses" item="item" index="index" separator=",">
             (#{item.id},#{item.courseName},#{item.avatar},#{item.local},
@@ -34,3 +34,4 @@
     </insert>
 
 </mapper>
+

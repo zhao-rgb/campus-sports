@@ -1,6 +1,6 @@
 package com.soft1851.demo.mapper;
 
-import com.soft1851.demo.entity.SysUser;
+import com.soft1851.demo.domain.entity.SysUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

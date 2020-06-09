@@ -1,6 +1,6 @@
 package com.soft1851.demo.service.impl;
 
-import com.soft1851.demo.entity.SysUser;
+import com.soft1851.demo.domain.entity.SysUser;
 import com.soft1851.demo.mapper.SysUserMapper;
 import com.soft1851.demo.service.SysUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

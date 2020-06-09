@@ -1,4 +1,4 @@
-package com.soft1851.demo.entity;
+package com.soft1851.demo.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;

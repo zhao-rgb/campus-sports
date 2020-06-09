@@ -1,6 +1,6 @@
 package com.soft1851.demo.service;
 
-import com.soft1851.demo.entity.SysCourse;
+import com.soft1851.demo.domain.entity.SysCourse;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

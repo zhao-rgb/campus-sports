@@ -1,7 +1,9 @@
 package com.soft1851.demo.service;
 
-import com.soft1851.demo.entity.SysSport;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.soft1851.demo.domain.entity.SysSport;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SysSportService extends IService<SysSport> {
 
+    List<SysSport> stepNumber(int userId);
 }

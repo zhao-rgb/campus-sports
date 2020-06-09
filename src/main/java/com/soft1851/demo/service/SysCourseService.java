@@ -1,7 +1,7 @@
 package com.soft1851.demo.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.soft1851.demo.entity.SysCourse;
+import com.soft1851.demo.domain.entity.SysCourse;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +15,6 @@ import java.util.Map;
  * @since 2020-06-09
  */
 public interface SysCourseService extends IService<SysCourse> {
-
     /**
      * 根据类型分组
      * @return

@@ -1,10 +1,13 @@
 package com.soft1851.demo.service.impl;
 
-import com.soft1851.demo.entity.SysSport;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.soft1851.demo.domain.entity.SysSport;
 import com.soft1851.demo.mapper.SysSportMapper;
 import com.soft1851.demo.service.SysSportService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +19,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysSportServiceImpl extends ServiceImpl<SysSportMapper, SysSport> implements SysSportService {
+
+    @Resource
+    private SysSportMapper sysSportMapper;
+
+    @Override
+    public List<SysSport> stepNumber(int userId) {
+        return sysSportMapper.getStepNumber(userId);
+    }
 
 }
