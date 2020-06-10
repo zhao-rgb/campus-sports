@@ -12,9 +12,10 @@ import java.util.Map;
  * </p>
  *
  * @author zxl
- * @since 2020-06-09
+ * @since 2020-06-10
  */
 public interface SysCourseService extends IService<SysCourse> {
+
     /**
      * 根据类型分组
      * @return

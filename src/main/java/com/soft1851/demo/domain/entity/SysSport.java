@@ -1,5 +1,6 @@
 package com.soft1851.demo.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -17,7 +18,7 @@ import java.sql.Timestamp;
  * </p>
  *
  * @author zxl
- * @since 2020-06-09
+ * @since 2020-06-10
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -30,7 +31,7 @@ public class SysSport extends Model<SysSport> {
     /**
      * 流水id
      */
-    @TableId("id")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -62,6 +63,24 @@ public class SysSport extends Model<SysSport> {
      */
     @TableField("sport_distance")
     private Long sportDistance;
+
+    /**
+     * 运动平均速度
+     */
+    @TableField("sport_average_speed")
+    private String sportAverageSpeed;
+
+    /**
+     * 运动轨迹
+     */
+    @TableField("sport_url")
+    private String sportUrl;
+
+    /**
+     * 运动的模式
+     */
+    @TableField("sport_pattern")
+    private String sportPattern;
 
 
     @Override

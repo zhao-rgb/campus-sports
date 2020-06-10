@@ -1,15 +1,14 @@
 package com.soft1851.demo.domain.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -17,7 +16,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author zxl
- * @since 2020-06-09
+ * @since 2020-06-10
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -28,13 +27,13 @@ public class SysUser extends Model<SysUser> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * id
+     * 用户id
      */
     @TableId("id")
     private Long id;
 
     /**
-     * 账号
+     * 用户账号
      */
     @TableField("user_account")
     private String userAccount;
@@ -44,11 +43,13 @@ public class SysUser extends Model<SysUser> {
      */
     @TableField("user_name")
     private String userName;
+
     /**
-     * 密码
+     * 用户密码
      */
-    @TableField("password")
-    private String password;
+    @TableField("user_password")
+    private String userPassword;
+
     /**
      * 加密盐
      */
@@ -74,10 +75,22 @@ public class SysUser extends Model<SysUser> {
     private String avatar;
 
     /**
-     * 步数
+     * 微信步数
      */
     @TableField("step_number")
     private Long stepNumber;
+
+    /**
+     * 总去运动步数
+     */
+    @TableField("go_step_number")
+    private Long goStepNumber;
+
+    /**
+     * 总去运动时间
+     */
+    @TableField("go_step_time")
+    private Long goStepTime;
 
     /**
      * 个签
@@ -96,6 +109,12 @@ public class SysUser extends Model<SysUser> {
      */
     @TableField("fans")
     private Long fans;
+
+    /**
+     * 打卡次数
+     */
+    @TableField("daily_attendance")
+    private Long dailyAttendance;
 
     /**
      * 创建时间

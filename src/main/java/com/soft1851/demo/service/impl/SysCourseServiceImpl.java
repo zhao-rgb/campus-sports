@@ -17,7 +17,7 @@ import java.util.Map;
  * </p>
  *
  * @author zxl
- * @since 2020-06-09
+ * @since 2020-06-10
  */
 @Service
 public class SysCourseServiceImpl extends ServiceImpl<SysCourseMapper, SysCourse> implements SysCourseService {
@@ -46,4 +46,5 @@ public class SysCourseServiceImpl extends ServiceImpl<SysCourseMapper, SysCourse
                 .or().like("type", field);
         return sysCourseMapper.selectList(wrapper);
     }
+
 }

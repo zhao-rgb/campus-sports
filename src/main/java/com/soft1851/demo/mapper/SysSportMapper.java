@@ -11,10 +11,9 @@ import java.util.List;
  * </p>
  *
  * @author zxl
- * @since 2020-06-09
+ * @since 2020-06-10
  */
 public interface SysSportMapper extends BaseMapper<SysSport> {
 
     List<SysSport> getStepNumber(int userId);
-
 }

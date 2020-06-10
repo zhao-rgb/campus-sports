@@ -7,20 +7,25 @@
         <id column="id" property="id" />
         <result column="user_account" property="userAccount" />
         <result column="user_name" property="userName" />
+        <result column="user_password" property="userPassword" />
+        <result column="salt" property="salt" />
         <result column="address" property="address" />
         <result column="gender" property="gender" />
         <result column="avatar" property="avatar" />
         <result column="step_number" property="stepNumber" />
+        <result column="go_step_number" property="goStepNumber" />
+        <result column="go_step_time" property="goStepTime" />
         <result column="signature" property="signature" />
         <result column="follow" property="follow" />
         <result column="fans" property="fans" />
+        <result column="daily_attendance" property="dailyAttendance" />
         <result column="gmt_create" property="gmtCreate" />
         <result column="gmt_modified" property="gmtModified" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_account, user_name, address, gender, avatar, step_number, signature, follow, fans, gmt_create, gmt_modified
+        id, user_account, user_name, user_password, salt, address, gender, avatar, step_number, go_step_number, go_step_time, signature, follow, fans, daily_attendance, gmt_create, gmt_modified
     </sql>
 
 </mapper>

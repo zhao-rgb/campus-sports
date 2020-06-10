@@ -15,7 +15,7 @@ import java.util.List;
  * </p>
  *
  * @author zxl
- * @since 2020-06-09
+ * @since 2020-06-10
  */
 @Service
 public class SysSportServiceImpl extends ServiceImpl<SysSportMapper, SysSport> implements SysSportService {
@@ -32,6 +32,4 @@ public class SysSportServiceImpl extends ServiceImpl<SysSportMapper, SysSport> i
     public void insertSport(SysSport sportDto) {
         sysSportMapper.insert(sportDto);
     }
-
-
 }

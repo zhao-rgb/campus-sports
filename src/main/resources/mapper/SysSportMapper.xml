@@ -10,11 +10,14 @@
         <result column="gmt_create" property="gmtCreate" />
         <result column="sport_time" property="sportTime" />
         <result column="sport_distance" property="sportDistance" />
+        <result column="sport_average_speed" property="sportAverageSpeed" />
+        <result column="sport_url" property="sportUrl" />
+        <result column="sport_pattern" property="sportPattern" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, step_number, gmt_create, sport_time, sport_distance
+        id, user_id, step_number, gmt_create, sport_time, sport_distance, sport_average_speed, sport_url, sport_pattern
     </sql>
 
     <!--    插近一个星期的步数-->
