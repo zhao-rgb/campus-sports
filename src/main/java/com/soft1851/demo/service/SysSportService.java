@@ -15,6 +15,11 @@ import java.util.List;
  */
 public interface SysSportService extends IService<SysSport> {
 
+    /**
+     * 一个星期内的步数
+     * @param userId
+     * @return
+     */
     List<SysSport> stepNumber(int userId);
 
     void insertSport(SysSport sportDto);

@@ -1,5 +1,6 @@
 package com.soft1851.demo.domain.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -17,7 +18,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author zxl
- * @since 2020-06-09
+ * @since 2020-06-10
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -31,7 +32,7 @@ public class SysCourse extends Model<SysCourse> {
     /**
      * 流水id
      */
-    @TableId("id")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**

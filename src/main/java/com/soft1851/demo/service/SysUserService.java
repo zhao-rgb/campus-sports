@@ -1,7 +1,10 @@
 package com.soft1851.demo.service;
 
-import com.soft1851.demo.domain.entity.SysUser;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.soft1851.demo.domain.dto.LoginDto;
+import com.soft1851.demo.domain.entity.SysUser;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,17 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SysUserService extends IService<SysUser> {
 
+    /**
+     * 根据主键查询用户信息
+     * @param id
+     * @return
+     */
+    SysUser findSysUserById(Long id);
+
+    /**
+     * 登录
+     * @param loginDto
+     * @return
+     */
+    Map<String,Object> login(LoginDto loginDto);
 }
