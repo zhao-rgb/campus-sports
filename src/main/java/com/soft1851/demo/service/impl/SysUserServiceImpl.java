@@ -1,8 +1,10 @@
 package com.soft1851.demo.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.soft1851.demo.common.ResultCode;
 import com.soft1851.demo.domain.dto.LoginDto;
+import com.soft1851.demo.domain.dto.SysUserDto;
 import com.soft1851.demo.domain.entity.SysUser;
 import com.soft1851.demo.exception.CustomException;
 import com.soft1851.demo.mapper.SysUserMapper;
@@ -50,6 +52,25 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         } else {
             throw new CustomException("密码错误", ResultCode.USER_PASSWORD_ERROR);
         }
+    }
+
+    @Override
+    public boolean updateInfo(SysUserDto sysUserDto) {
+        SysUser sysUser = sysUserMapper.getSysUserByUserAccount(sysUserDto.getUserAccount());
+        UpdateWrapper<SysUser> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.eq("user_account",sysUserDto.getUserAccount());
+        sysUser.setUserName(sysUserDto.getUserName());
+        sysUser.setUserPassword(Md5Util.getMd5(sysUserDto.getUserPassword(),true,32));
+        sysUser.setAddress(sysUserDto.getAddress());
+        sysUser.setGender(sysUserDto.getGender());
+        sysUser.setAvatar(sysUserDto.getAvatar());
+        sysUser.setStepNumber(sysUserDto.getStepNumber());
+        sysUser.setGoStepNumber(sysUserDto.getGoStepNumber());
+        sysUser.setGoStepTime(sysUserDto.getGoStepTime());
+        sysUser.setSignature(sysUserDto.getSignature());
+        sysUser.setDailyAttendance(sysUserDto.getDailyAttendance());
+        sysUserMapper.update(sysUser,updateWrapper);
+        return true;
     }
 
 }
