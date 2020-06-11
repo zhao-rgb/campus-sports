@@ -16,5 +16,10 @@ import java.util.List;
  */
 public interface SysCourseMapper extends BaseMapper<SysCourse> {
 
+    /**
+     * 批量插入
+     * @param sysCourses
+     * @return
+     */
     int batchInsert(@Param("courses") List<SysCourse> sysCourses);
 }

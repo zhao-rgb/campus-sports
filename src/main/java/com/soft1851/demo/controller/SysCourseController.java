@@ -27,13 +27,20 @@ public class SysCourseController {
     @Resource
     private SysCourseService sysCourseService;
 
-    //根据类型分类
+    /**
+     * 根据类型分类
+     * @return
+     */
     @GetMapping("/type")
     public List<Map<String,Object>> getByType(){
         return sysCourseService.getCourseByType();
     }
 
-    //模糊查询
+    /**
+     * 模糊查询
+     * @param field
+     * @return
+     */
     @GetMapping("/blurSelect")
     public List<SysCourse> blurSelectSysCourse(@Param("field") String field) {
         return sysCourseService.blurSelect(field);

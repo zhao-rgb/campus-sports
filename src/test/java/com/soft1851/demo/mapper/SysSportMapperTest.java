@@ -15,7 +15,7 @@ class SysSportMapperTest {
 
     @Test
     void getStepNumber() {
-        List<SysSport> sysSports = sysSportMapper.getStepNumber(1);
+        List<SysSport> sysSports = sysSportMapper.getStepNumber(1l);
         sysSports.forEach(System.out::println);
     }
 }

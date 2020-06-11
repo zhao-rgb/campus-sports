@@ -15,5 +15,25 @@ import java.util.List;
  */
 public interface SysSportMapper extends BaseMapper<SysSport> {
 
-    List<SysSport> getStepNumber(int userId);
+    /**
+     * 一个星期内的步数
+     * @param userId
+     * @return
+     */
+    List<SysSport> getStepNumber(Long userId);
+
+    /**
+     * 根据userId查用户运动的记录
+     * @param userId
+     * @return
+     */
+    List<SysSport> getSelectSport(Long userId);
+
+    /**
+     * 本月统计步数
+     * @param userId
+     * @param stepNumber
+     * @return
+     */
+    int getMonthStepNumber(Long userId, int stepNumber);
 }

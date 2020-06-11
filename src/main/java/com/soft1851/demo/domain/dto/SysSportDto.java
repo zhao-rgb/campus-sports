@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @author zhao
  * @className sportdto
@@ -18,9 +16,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SportDto {
+public class SysSportDto {
     private Long userId;
     private Integer stepNumber;
-    private LocalDateTime sportTime;
+    private String sportTime;
     private Long sportDistance;
+    private String sportAverageSpeed;
+    private String sportUrl;
+    private String sportPattern;
 }

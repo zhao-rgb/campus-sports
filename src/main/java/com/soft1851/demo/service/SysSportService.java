@@ -20,7 +20,20 @@ public interface SysSportService extends IService<SysSport> {
      * @param userId
      * @return
      */
-    List<SysSport> stepNumber(int userId);
+    List<SysSport> stepNumber(Long userId);
 
-    void insertSport(SysSport sportDto);
+    /**
+     * 根据userId查用户运动的记录
+     * @param userId
+     * @return
+     */
+    List<SysSport> getSysSportByUserId(Long userId);
+
+    /**
+     * 本月统计步数
+     * @param userId
+     * @param stepNumber
+     * @return
+     */
+    int monthStepNumber(Long userId, int stepNumber);
 }
