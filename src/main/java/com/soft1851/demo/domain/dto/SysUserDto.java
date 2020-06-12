@@ -1,9 +1,14 @@
 package com.soft1851.demo.domain.dto;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 /**
  * @author zhao
@@ -19,7 +24,6 @@ import lombok.NoArgsConstructor;
 public class SysUserDto {
     private String userAccount;
     private String userName;
-    private String userPassword;
     private String address;
     private String gender;
     private String avatar;
@@ -28,4 +32,10 @@ public class SysUserDto {
     private Long goStepTime;
     private String signature;
     private Long dailyAttendance;
+    /**
+     * 更新时间
+     */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime gmtModified;
 }

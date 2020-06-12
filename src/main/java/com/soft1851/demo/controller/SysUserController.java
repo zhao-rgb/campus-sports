@@ -57,4 +57,10 @@ public class SysUserController {
         return ResponseResult.success(sysUserService.updateInfo(sysUserDto));
     }
 
+    @PostMapping("/register")
+    public ResponseResult addRole(@RequestBody  SysUser sysUser) {
+        sysUserService.save(sysUser);
+        return ResponseResult.success();
+    }
+
 }

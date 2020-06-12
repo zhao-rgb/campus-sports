@@ -60,7 +60,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         UpdateWrapper<SysUser> updateWrapper = new UpdateWrapper<>();
         updateWrapper.eq("user_account",sysUserDto.getUserAccount());
         sysUser.setUserName(sysUserDto.getUserName());
-        sysUser.setUserPassword(Md5Util.getMd5(sysUserDto.getUserPassword(),true,32));
         sysUser.setAddress(sysUserDto.getAddress());
         sysUser.setGender(sysUserDto.getGender());
         sysUser.setAvatar(sysUserDto.getAvatar());
@@ -69,6 +68,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         sysUser.setGoStepTime(sysUserDto.getGoStepTime());
         sysUser.setSignature(sysUserDto.getSignature());
         sysUser.setDailyAttendance(sysUserDto.getDailyAttendance());
+        sysUser.setGmtModified(sysUserDto.getGmtModified());
         sysUserMapper.update(sysUser,updateWrapper);
         return true;
     }
