@@ -21,13 +21,6 @@
         id, user_id, step_number, sport_date, sport_time, sport_distance, sport_average_speed, sport_url, sport_pattern, gmt_create
     </sql>
 
-    <!--插近一个星期的步数-->
-    <select id="getStepNumber" parameterType="Long" resultType="com.soft1851.demo.domain.entity.SysSport">
-        SELECT * FROM sys_sport
-        WHERE user_id= #{userId}
-          AND DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= sport_date
-          AND sport_date ORDER BY sport_date ASC
-    </select>
 
     <!--查用户运动的记录（按时间降序排序）-->
     <select id="getSelectSport" parameterType="Long" resultType="com.soft1851.demo.domain.entity.SysSport">
@@ -36,11 +29,4 @@
           AND gmt_create ORDER BY gmt_create DESC
     </select>
 
-    <!--本月统计步数-->
-    <select id="getMonthStepNumber"  resultType="int">
-        SELECT COUNT(*) FROM sys_sport
-        WHERE user_id= #{userId}
-          AND step_number &lt;= #{stepNumber}
-          AND DATE_FORMAT(sport_date, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
-    </select>
 </mapper>

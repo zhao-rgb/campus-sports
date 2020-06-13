@@ -15,12 +15,6 @@ import java.util.List;
  */
 public interface SysSportService extends IService<SysSport> {
 
-    /**
-     * 一个星期内的步数
-     * @param userId
-     * @return
-     */
-    List<SysSport> stepNumber(Long userId);
 
     /**
      * 根据userId查用户运动的记录
@@ -29,11 +23,5 @@ public interface SysSportService extends IService<SysSport> {
      */
     List<SysSport> getSysSportByUserId(Long userId);
 
-    /**
-     * 本月统计步数
-     * @param userId
-     * @param stepNumber
-     * @return
-     */
-    int monthStepNumber(Long userId, int stepNumber);
+
 }

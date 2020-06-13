@@ -23,18 +23,11 @@ public class SysSportServiceImpl extends ServiceImpl<SysSportMapper, SysSport> i
     @Resource
     private SysSportMapper sysSportMapper;
 
-    @Override
-    public List<SysSport> stepNumber(Long userId) {
-        return sysSportMapper.getStepNumber(userId);
-    }
 
     @Override
     public List<SysSport> getSysSportByUserId(Long userId) {
         return sysSportMapper.getSelectSport(userId);
     }
 
-    @Override
-    public int monthStepNumber(Long userId, int stepNumber) {
-        return sysSportMapper.getMonthStepNumber(userId,stepNumber);
-    }
+
 }

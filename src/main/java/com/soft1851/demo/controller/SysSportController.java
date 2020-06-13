@@ -25,15 +25,6 @@ public class SysSportController {
     @Resource
     private SysSportService sysSportService;
 
-    /**
-     * 返回一个星期内的步数
-     * @param userId
-     * @return
-     */
-    @GetMapping("/week")
-    public List<SysSport> getStepNumber(@Param("userId") Long userId) {
-        return sysSportService.stepNumber(userId);
-    }
 
     /**
      * 查用户运动的记录
@@ -45,16 +36,6 @@ public class SysSportController {
         return sysSportService.getSysSportByUserId(userId);
     }
 
-    /**
-     * 本月统计步数
-     * @param userId
-     * @param stepNumber
-     * @return
-     */
-    @GetMapping("/selectSport/stepNumber")
-    public int getMonthStepNumber(@Param("userId") Long userId, @Param("stepNumber") int stepNumber){
-        return sysSportService.monthStepNumber(userId,stepNumber);
-    }
 
     /**
      * 插入运动的记录
