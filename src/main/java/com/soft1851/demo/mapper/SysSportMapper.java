@@ -2,6 +2,7 @@ package com.soft1851.demo.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.soft1851.demo.domain.entity.SysSport;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @author zxl
  * @since 2020-06-10
  */
+@Repository
 public interface SysSportMapper extends BaseMapper<SysSport> {
 
     /**

@@ -7,25 +7,26 @@
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
         <result column="step_number" property="stepNumber" />
-        <result column="gmt_create" property="gmtCreate" />
+        <result column="sport_date" property="sportDate" />
         <result column="sport_time" property="sportTime" />
         <result column="sport_distance" property="sportDistance" />
         <result column="sport_average_speed" property="sportAverageSpeed" />
         <result column="sport_url" property="sportUrl" />
         <result column="sport_pattern" property="sportPattern" />
+        <result column="gmt_create" property="gmtCreate" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, step_number, gmt_create, sport_time, sport_distance, sport_average_speed, sport_url, sport_pattern
+        id, user_id, step_number, sport_date, sport_time, sport_distance, sport_average_speed, sport_url, sport_pattern, gmt_create
     </sql>
 
     <!--插近一个星期的步数-->
     <select id="getStepNumber" parameterType="Long" resultType="com.soft1851.demo.domain.entity.SysSport">
         SELECT * FROM sys_sport
         WHERE user_id= #{userId}
-          AND DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= gmt_create
-          AND gmt_create ORDER BY gmt_create ASC
+          AND DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= sport_date
+          AND sport_date ORDER BY sport_date ASC
     </select>
 
     <!--查用户运动的记录（按时间降序排序）-->
@@ -40,6 +41,6 @@
         SELECT COUNT(*) FROM sys_sport
         WHERE user_id= #{userId}
           AND step_number &lt;= #{stepNumber}
-          AND DATE_FORMAT(gmt_create, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
+          AND DATE_FORMAT(sport_date, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
     </select>
 </mapper>

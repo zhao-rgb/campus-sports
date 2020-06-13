@@ -1,16 +1,16 @@
 package com.soft1851.demo.domain.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.sql.Date;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -47,10 +47,11 @@ public class SysSport extends Model<SysSport> {
     private Integer stepNumber;
 
     /**
-     * 具体运动日期
+     * 运动日期
      */
-    @TableField("gmt_create")
-    private Timestamp gmtCreate;
+    @TableField(fill = FieldFill.INSERT)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date sportDate;
 
     /**
      * 运动的时间
@@ -82,6 +83,12 @@ public class SysSport extends Model<SysSport> {
     @TableField("sport_pattern")
     private String sportPattern;
 
+    /**
+     * 更新时间
+     */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime gmtCreate;
 
     @Override
     protected Serializable pkVal() {
