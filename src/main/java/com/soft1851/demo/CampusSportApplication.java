@@ -3,6 +3,7 @@ package com.soft1851.demo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @author Administrator
@@ -10,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-// 扫描我们的mapper文件夹
+@EnableScheduling
 @MapperScan("com.soft1851.demo.mapper")
 public class CampusSportApplication {
 

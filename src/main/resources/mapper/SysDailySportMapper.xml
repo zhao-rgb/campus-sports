@@ -34,4 +34,12 @@
           AND sport_date ORDER BY sport_date ASC
     </select>
 
+    <!--批量插入每天运动的数据（sum求和）-->
+    <insert id="batchInsertSport" parameterType="com.soft1851.demo.domain.entity.SysDailySport">
+        INSERT INTO sys_daily_sport VALUES
+        <foreach collection="sports" item="item" index="index" separator=",">
+            (#{item.id},#{item.userId},#{item.totalSportNumber},#{item.totalSportTime},
+            #{item.totalSportDistance},#{item.totalSportAverageSpeed},#{item.sportDate})
+        </foreach>
+    </insert>
 </mapper>

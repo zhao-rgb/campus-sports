@@ -2,6 +2,7 @@ package com.soft1851.demo.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.soft1851.demo.domain.entity.SysDailySport;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -29,4 +30,11 @@ public interface SysDailySportMapper extends BaseMapper<SysDailySport> {
      * @return
      */
     List<SysDailySport> getStepNumber(Long userId);
+
+    /**
+     * 批量插入每天运动的数据（sum求和）
+     * @param sysDailySports
+     * @return
+     */
+    int batchInsertSport(@Param("sports") List<SysDailySport> sysDailySports);
 }

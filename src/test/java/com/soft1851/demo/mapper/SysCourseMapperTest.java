@@ -17,8 +17,6 @@ class SysCourseMapperTest {
 
     @Test
     void testinsert() {
-//        int n = sysCourseMapper.insert(SysCourse.builder().courseName("力量恢复").avatar("1.jpg").build());
-//        assertEquals(1, n);
         List<SysCourse> sysCourses = new ArrayList<>();
         for (int i = 0; i < 5; i++){
             SysCourse sysCourse = SysCourse.builder()
@@ -35,7 +33,8 @@ class SysCourseMapperTest {
                     .url("http://static.ouj.com/hiyd_cms/49fef528a17b4bd89f280684a78a75a5.mp4")
                     .build();
             sysCourses.add(sysCourse);
+            System.out.println(sysCourses);
         }
-        sysCourseMapper.batchInsert(sysCourses);
+//        sysCourseMapper.batchInsert(sysCourses);
     }
 }

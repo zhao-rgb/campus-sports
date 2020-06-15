@@ -1,15 +1,25 @@
-package com.soft1851.demo.mapper;
+package com.soft1851.demo.util;
 
 import com.soft1851.demo.domain.entity.SysDailySport;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import com.soft1851.demo.mapper.SysDailySportMapper;
+import com.soft1851.demo.mapper.SysSportMapper;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-@SpringBootTest
-class SysSportMapperTest {
+
+/**
+ * @author zhao
+ * @className ScheduledTask
+ * @Description 定时任务
+ * @Date 2020/6/14
+ * @Version 1.0
+ **/
+@Component
+public class ScheduledTask {
 
     @Resource
     private SysSportMapper sysSportMapper;
@@ -17,9 +27,9 @@ class SysSportMapperTest {
     @Resource
     private SysDailySportMapper sysDailySportMapper;
 
-
-    @Test
-    void selectSport() {
+    @Scheduled(cron = "40 59 23 * * *")
+    public void scheduledTask() {
+        System.out.println("定时任务开始");
         List<SysDailySport> sysDailySports = sysSportMapper.selectSport();
         List<SysDailySport> list = new ArrayList<>();
         for (SysDailySport sysDailySport: sysDailySports){
@@ -27,11 +37,8 @@ class SysSportMapperTest {
             System.out.println(list);
         }
         sysDailySportMapper.batchInsertSport(list);
+        System.out.println("定时任务结束");
     }
 
-//    @Test
-//    void getStepNumber() {
-//        List<SysSport> sysSports = sysSportMapper.getStepNumber(1l);
-//        sysSports.forEach(System.out::println);
-//    }
 }
+
