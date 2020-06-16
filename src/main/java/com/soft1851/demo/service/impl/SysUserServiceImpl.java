@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.soft1851.demo.common.ResultCode;
 import com.soft1851.demo.domain.dto.LoginDto;
+import com.soft1851.demo.domain.dto.RegisterDto;
 import com.soft1851.demo.domain.dto.SysUserDto;
 import com.soft1851.demo.domain.entity.SysUser;
 import com.soft1851.demo.exception.CustomException;
@@ -70,6 +71,17 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         sysUser.setDailyAttendance(sysUserDto.getDailyAttendance());
         sysUser.setGmtModified(sysUserDto.getGmtModified());
         sysUserMapper.update(sysUser,updateWrapper);
+        return true;
+    }
+
+    @Override
+    public boolean register(RegisterDto registerDto) {
+        RegisterDto registerDto1 = RegisterDto.builder()
+                .userAccount(registerDto.getUserAccount())
+                .userName(registerDto.getUserName())
+                .userPassword(Md5Util.getMd5(registerDto.getUserPassword(),true,32))
+                .build();
+        sysUserMapper.insert(registerDto1);
         return true;
     }
 

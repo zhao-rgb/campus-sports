@@ -1,7 +1,9 @@
 package com.soft1851.demo.mapper;
 
-import com.soft1851.demo.domain.entity.SysUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.soft1851.demo.domain.dto.RegisterDto;
+import com.soft1851.demo.domain.entity.SysUser;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -24,4 +26,11 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
      */
     @Select("SELECT * FROM sys_user WHERE user_account = #{userAccount}")
     SysUser getSysUserByUserAccount(@Param("userAccount") String userAccount);
+
+    /**
+     * 用户注册
+     * @param registerDto
+     */
+    @Insert("INSERT INTO sys_user(user_account,user_name,user_password) VALUES (#{userAccount}, #{userName}, #{userPassword})")
+    void insert(RegisterDto registerDto);
 }

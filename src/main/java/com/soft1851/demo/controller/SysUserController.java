@@ -3,6 +3,7 @@ package com.soft1851.demo.controller;
 
 import com.soft1851.demo.common.ResponseResult;
 import com.soft1851.demo.domain.dto.LoginDto;
+import com.soft1851.demo.domain.dto.RegisterDto;
 import com.soft1851.demo.domain.dto.SysUserDto;
 import com.soft1851.demo.domain.entity.SysUser;
 import com.soft1851.demo.service.SysUserService;
@@ -57,11 +58,14 @@ public class SysUserController {
         return ResponseResult.success(sysUserService.updateInfo(sysUserDto));
     }
 
-
+    /**
+     * 用户注册
+     * @param registerDto
+     * @return
+     */
     @PostMapping("/register")
-    public ResponseResult addRole(@RequestBody  SysUser sysUser) {
-        sysUserService.save(sysUser);
-        return ResponseResult.success();
+    public ResponseResult addRole(@RequestBody RegisterDto registerDto) {
+        return ResponseResult.success(sysUserService.register(registerDto));
     }
 
 }
