@@ -1,6 +1,7 @@
 package com.soft1851.demo.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.soft1851.demo.domain.dto.SysDailySportDto;
 import com.soft1851.demo.domain.entity.SysDailySport;
 
 import java.util.List;
@@ -29,4 +30,11 @@ public interface SysDailySportService extends IService<SysDailySport> {
      * @return
      */
     List<SysDailySport> stepNumber(Long userId);
+
+    /**
+     * 统计本月全部步数和距离
+     * @param userId
+     * @return
+     */
+    List<SysDailySportDto> getNumSport(Long userId);
 }

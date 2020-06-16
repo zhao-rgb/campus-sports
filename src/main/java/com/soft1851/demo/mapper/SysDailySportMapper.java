@@ -1,6 +1,7 @@
 package com.soft1851.demo.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.soft1851.demo.domain.dto.SysDailySportDto;
 import com.soft1851.demo.domain.entity.SysDailySport;
 import org.apache.ibatis.annotations.Param;
 
@@ -37,4 +38,11 @@ public interface SysDailySportMapper extends BaseMapper<SysDailySport> {
      * @return
      */
     int batchInsertSport(@Param("sports") List<SysDailySport> sysDailySports);
+
+    /**
+     * 统计本月全部步数和距离
+     * @param userId
+     * @return
+     */
+    List<SysDailySportDto> numSport(Long userId);
 }

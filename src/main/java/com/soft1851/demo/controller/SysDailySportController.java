@@ -1,5 +1,6 @@
 package com.soft1851.demo.controller;
 
+import com.soft1851.demo.domain.dto.SysDailySportDto;
 import com.soft1851.demo.domain.entity.SysDailySport;
 import com.soft1851.demo.service.SysDailySportService;
 import org.apache.ibatis.annotations.Param;
@@ -43,5 +44,15 @@ public class SysDailySportController {
     @GetMapping("/week")
     public List<SysDailySport> getStepNumber(@Param("userId") Long userId) {
         return sysDailySportService.stepNumber(userId);
+    }
+
+    /**
+     * 统计本月全部步数和距离
+     * @param userId
+     * @return
+     */
+    @GetMapping("/numSport")
+    public List<SysDailySportDto> getNumSport(@Param("userId") Long userId){
+        return sysDailySportService.getNumSport(userId);
     }
 }

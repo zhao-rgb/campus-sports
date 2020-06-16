@@ -42,4 +42,12 @@
             #{item.totalSportDistance},#{item.totalSportAverageSpeed},#{item.sportDate})
         </foreach>
     </insert>
+
+    <!--统计本月全部步数和距离-->
+    <select id="numSport"  parameterType="Long" resultType="com.soft1851.demo.domain.dto.SysDailySportDto">
+        SELECT user_id,SUM(total_sport_number) AS total_sport_number,
+               SUM(total_sport_distance) AS total_sport_distance FROM sys_daily_sport
+        WHERE user_id= 1
+          AND DATE_FORMAT(sport_date, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
+    </select>
 </mapper>

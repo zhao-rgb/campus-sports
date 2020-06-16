@@ -1,6 +1,7 @@
 package com.soft1851.demo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.soft1851.demo.domain.dto.SysDailySportDto;
 import com.soft1851.demo.domain.entity.SysDailySport;
 import com.soft1851.demo.mapper.SysDailySportMapper;
 import com.soft1851.demo.service.SysDailySportService;
@@ -30,5 +31,10 @@ public class SysDailySportServiceImpl extends ServiceImpl<SysDailySportMapper, S
     @Override
     public List<SysDailySport> stepNumber(Long userId) {
         return sysDailySportMapper.getStepNumber(userId);
+    }
+
+    @Override
+    public List<SysDailySportDto> getNumSport(Long userId) {
+        return sysDailySportMapper.numSport(userId);
     }
 }
