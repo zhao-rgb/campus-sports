@@ -2,6 +2,7 @@ package com.soft1851.demo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.soft1851.demo.domain.entity.SysSport;
+import com.soft1851.demo.domain.vo.SysSportVo;
 import com.soft1851.demo.mapper.SysSportMapper;
 import com.soft1851.demo.service.SysSportService;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,11 @@ public class SysSportServiceImpl extends ServiceImpl<SysSportMapper, SysSport> i
     @Override
     public List<SysSport> getSysSportByUserId(Long userId) {
         return sysSportMapper.getSelectSport(userId);
+    }
+
+    @Override
+    public List<SysSportVo> getSumSport(Long userId) {
+        return sysSportMapper.sumSport(userId);
     }
 
 

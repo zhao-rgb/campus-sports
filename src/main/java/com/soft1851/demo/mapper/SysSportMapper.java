@@ -3,6 +3,7 @@ package com.soft1851.demo.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.soft1851.demo.domain.entity.SysDailySport;
 import com.soft1851.demo.domain.entity.SysSport;
+import com.soft1851.demo.domain.vo.SysSportVo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,7 +20,6 @@ import java.util.List;
 public interface SysSportMapper extends BaseMapper<SysSport> {
 
 
-
     /**
      * 根据userId查用户运动的记录
      * @param userId
@@ -32,5 +32,11 @@ public interface SysSportMapper extends BaseMapper<SysSport> {
      * @return
      */
     List<SysDailySport> selectSport();
+
+    /**
+     * 查找用户每天运动的步数等（求和）
+     * @return
+     */
+    List<SysSportVo> sumSport(Long userId);
 
 }

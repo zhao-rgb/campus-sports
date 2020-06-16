@@ -20,7 +20,7 @@ public class SysSportDto {
     private Long userId;
     private Integer stepNumber;
     private String sportTime;
-    private Long sportDistance;
+    private String sportDistance;
     private String sportAverageSpeed;
     private String sportUrl;
     private String sportPattern;

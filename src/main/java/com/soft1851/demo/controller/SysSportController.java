@@ -3,6 +3,7 @@ package com.soft1851.demo.controller;
 
 import com.soft1851.demo.common.ResponseResult;
 import com.soft1851.demo.domain.entity.SysSport;
+import com.soft1851.demo.domain.vo.SysSportVo;
 import com.soft1851.demo.service.SysSportService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +47,16 @@ public class SysSportController {
     public ResponseResult addRole(@RequestBody SysSport sysSport) {
         sysSportService.save(sysSport);
         return ResponseResult.success();
+    }
+
+    /**
+     * 查找用户每天运动的步数等（求和）
+     * @param userId
+     * @return
+     */
+    @GetMapping("/sumSport")
+    public List<SysSportVo> getSumSport(@Param("userId") Long userId){
+        return sysSportService.getSumSport(userId);
     }
 
 }

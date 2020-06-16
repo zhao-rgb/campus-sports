@@ -41,4 +41,18 @@
            AND SUM(sport_distance)
            AND AVG(sport_average_speed)
     </select>
+
+    <select id="sumSport"  parameterType="Long" resultType="com.soft1851.demo.domain.vo.SysSportVo">
+        SELECT user_id,sport_date,SUM(step_number) AS total_sport_number,
+               SUM(sport_time) AS total_sport_time,
+               SUM(sport_distance) AS total_sport_distance,
+               AVG(sport_average_speed) AS total_sport_average_speed	FROM sys_sport
+        WHERE user_id = #{userId}
+          AND TO_DAYS(gmt_create) = TO_DAYS(NOW())
+        GROUP BY user_id
+        HAVING SUM(step_number)
+           AND SUM(sport_time)
+           AND SUM(sport_distance)
+           AND AVG(sport_average_speed)
+    </select>
 </mapper>

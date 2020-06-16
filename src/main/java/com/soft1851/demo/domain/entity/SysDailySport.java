@@ -55,7 +55,7 @@ public class SysDailySport extends Model<SysDailySport> {
      * 总距离
      */
     @TableField("total_sport_distance")
-    private Long totalSportDistance;
+    private String totalSportDistance;
 
     /**
      * 总平均速度
