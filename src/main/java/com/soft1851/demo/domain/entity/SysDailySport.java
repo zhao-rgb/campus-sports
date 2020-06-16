@@ -42,25 +42,25 @@ public class SysDailySport extends Model<SysDailySport> {
     /**
      * 总步数
      */
-    @TableField(" total_sport_number")
+    @TableField("total_sport_number")
     private Integer totalSportNumber;
 
     /**
      * 总时间
      */
-    @TableField(" total_sport_time")
+    @TableField("total_sport_time")
     private String totalSportTime;
 
     /**
      * 总距离
      */
-    @TableField(" total_sport_distance")
+    @TableField("total_sport_distance")
     private Long totalSportDistance;
 
     /**
      * 总平均速度
      */
-    @TableField(" total_sport_average_speed")
+    @TableField("total_sport_average_speed")
     private String totalSportAverageSpeed;
 
     /**

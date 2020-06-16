@@ -33,12 +33,12 @@
         SELECT user_id,sport_date,SUM(step_number) AS total_sport_number,
                SUM(sport_time) AS total_sport_time,
                SUM(sport_distance) AS total_sport_distance,
-               SUM(sport_average_speed) AS total_sport_average_speed	FROM sys_sport
+               AVG(sport_average_speed) AS total_sport_average_speed	FROM sys_sport
         WHERE TO_DAYS(gmt_create) = TO_DAYS(NOW())
         GROUP BY user_id
         HAVING SUM(step_number)
            AND SUM(sport_time)
            AND SUM(sport_distance)
-           AND SUM(sport_average_speed)
+           AND AVG(sport_average_speed)
     </select>
 </mapper>

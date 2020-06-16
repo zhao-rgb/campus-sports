@@ -63,7 +63,7 @@ public class SysSport extends Model<SysSport> {
      * 运动的距离
      */
     @TableField("sport_distance")
-    private Long sportDistance;
+    private String sportDistance;
 
     /**
      * 运动平均速度

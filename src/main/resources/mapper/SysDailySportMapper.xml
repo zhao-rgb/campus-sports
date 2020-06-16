@@ -9,13 +9,13 @@
         <result column="total_sport_number" property="totalSportNumber" />
         <result column="total_sport_time" property="totalSportTime" />
         <result column="total_sport_distance" property="totalSportDistance" />
-        <result column=" total_sport_average_speed" property=" totalSportAverageSpeed" />
+        <result column="total_sport_average_speed" property="totalSportAverageSpeed" />
         <result column="sport_date" property="sportDate" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, total_sport_number, total_sport_time, total_sport_distance,  total_sport_average_speed, sport_date
+        id, user_id, total_sport_number, total_sport_time, total_sport_distance, total_sport_average_speed, sport_date
     </sql>
 
     <!--本月统计步数-->
@@ -27,7 +27,7 @@
     </select>
 
     <!--查近一个星期的步数-->
-    <select id="getStepNumber" parameterType="Long" resultType="com.soft1851.demo.domain.entity.SysDailySport">
+    <select id="getStepNumber" resultType="com.soft1851.demo.domain.entity.SysDailySport">
         SELECT * FROM sys_daily_sport
         WHERE user_id= #{userId}
           AND DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= sport_date

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author zhao
  * @className ScheduledTask
- * @Description 定时任务
+ * @Description 定时每天插入记录
  * @Date 2020/6/14
  * @Version 1.0
  **/
@@ -31,13 +31,17 @@ public class ScheduledTask {
     public void scheduledTask() {
         System.out.println("定时任务开始");
         List<SysDailySport> sysDailySports = sysSportMapper.selectSport();
-        List<SysDailySport> list = new ArrayList<>();
-        for (SysDailySport sysDailySport: sysDailySports){
-            list.add(sysDailySport);
-            System.out.println(list);
+        if(sysDailySports == null) {
+            System.out.println("空值异常");
+        } else {
+            List<SysDailySport> list = new ArrayList<>();
+            for (SysDailySport sysDailySport: sysDailySports){
+                list.add(sysDailySport);
+                System.out.println(list);
+            }
+            sysDailySportMapper.batchInsertSport(list);
+            System.out.println("定时任务结束");
         }
-        sysDailySportMapper.batchInsertSport(list);
-        System.out.println("定时任务结束");
     }
 
 }
