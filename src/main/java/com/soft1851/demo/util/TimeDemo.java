@@ -77,6 +77,7 @@ public class TimeDemo {
     public static void main(String[] args) {
         String[] timeList={"10:01:01","09:07:11"};
         getTotal(timeList);
+
         System.out.println(getTotal(timeList));
     }
 }
