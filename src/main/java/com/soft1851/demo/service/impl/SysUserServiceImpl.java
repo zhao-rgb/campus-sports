@@ -1,5 +1,6 @@
 package com.soft1851.demo.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.soft1851.demo.common.ResultCode;
@@ -14,7 +15,9 @@ import com.soft1851.demo.util.Md5Util;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -76,13 +79,31 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public boolean register(RegisterDto registerDto) {
-        RegisterDto registerDto1 = RegisterDto.builder()
-                .userAccount(registerDto.getUserAccount())
-                .userName(registerDto.getUserName())
-                .userPassword(Md5Util.getMd5(registerDto.getUserPassword(),true,32))
-                .build();
-        sysUserMapper.insert(registerDto1);
+        SysUser user = sysUserMapper.getSysUserByUserAccount(registerDto.getUserAccount());
+        //如果账号不为空，直接返回用户已经存在
+        if (user != null){
+            throw new CustomException("用户已经存在",ResultCode.USER_FOUND);
+        } else {
+            RegisterDto registerDto1 = RegisterDto.builder()
+                    .userAccount(registerDto.getUserAccount())
+                    .userName(registerDto.getUserName())
+                    .userPassword(Md5Util.getMd5(registerDto.getUserPassword(),true,32))
+                    .avatar("https://kkkksslls.oss-cn-beijing.aliyuncs.com/campus/头像.png")
+                    .goStepNumber((long) 0)
+                    .gmtCreate(LocalDateTime.now())
+                    .gmtModified(LocalDateTime.now())
+                    .build();
+            sysUserMapper.insert(registerDto1);
+        }
         return true;
     }
+
+    @Override
+    public List<SysUser> stepRanking() {
+        QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
+        wrapper.orderByDesc("go_step_number");
+        return sysUserMapper.selectList(wrapper);
+    }
+
 
 }

@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -66,6 +67,15 @@ public class SysUserController {
     @PostMapping("/register")
     public ResponseResult addRole(@RequestBody RegisterDto registerDto) {
         return ResponseResult.success(sysUserService.register(registerDto));
+    }
+
+    /**
+     * 用户步数排行
+     * @return
+     */
+    @GetMapping("/stepRanking")
+    public List<SysUser> getStepRanking() {
+        return sysUserService.stepRanking();
     }
 
 }

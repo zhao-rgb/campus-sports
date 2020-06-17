@@ -35,6 +35,7 @@ public enum ResultCode {
     USER_SIGN_UP_FAIL(20007, "用户注册失败"),
     USER_SIGN_IN_FAIL(20008, "用户登录失败"),
     USER_NOT_FOUND(20009, "用户不存在"),
+    USER_FOUND(200012, "用户已经存在"),
     USER_NO_AUTH(20019, "用户权限不足"),
     USER_TOKEN_EXPIRES(200010, "Token已过期"),
     USER_AUTH_ERROR(200011, "用户认证失败"),

@@ -1,12 +1,9 @@
 package com.soft1851.demo.mapper;
 
-import com.soft1851.demo.domain.entity.SysDailySport;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootTest
 class SysSportMapperTest {
@@ -20,13 +17,13 @@ class SysSportMapperTest {
 
     @Test
     void selectSport() {
-        List<SysDailySport> sysDailySports = sysSportMapper.selectSport();
-        List<SysDailySport> list = new ArrayList<>();
-        for (SysDailySport sysDailySport: sysDailySports){
-            list.add(sysDailySport);
-            System.out.println(list);
-        }
-        sysDailySportMapper.batchInsertSport(list);
+//        List<SysDailySport> sysDailySports = sysSportMapper.selectSport();
+//        List<SysDailySport> list = new ArrayList<>();
+//        for (SysDailySport sysDailySport: sysDailySports){
+//            list.add(sysDailySport);
+//            System.out.println(list);
+//        }
+//        sysDailySportMapper.batchInsertSport(list);
     }
 
 //    @Test

@@ -6,6 +6,7 @@ import com.soft1851.demo.domain.dto.RegisterDto;
 import com.soft1851.demo.domain.dto.SysUserDto;
 import com.soft1851.demo.domain.entity.SysUser;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -45,4 +46,10 @@ public interface SysUserService extends IService<SysUser> {
      * @return
      */
     boolean register(RegisterDto registerDto);
+
+    /**
+     * 用户步数排行
+     * @return
+     */
+    List<SysUser> stepRanking();
 }
