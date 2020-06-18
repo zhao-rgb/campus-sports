@@ -3,7 +3,7 @@ package com.soft1851.demo.util;
 /**
  * @author zhao
  * @className TimeDemo
- * @Description TODO
+ * @Description 时间工具类
  * @Date 2020/6/16
  * @Version 1.0
  **/
@@ -15,6 +15,7 @@ public class TimeDemo {
         int min = 0;
         int sec = 0;
         for (int i = 0; i < timeList.length; i++) {
+            System.out.println(timeList[i]);
             timeString = timeList[i];
             int firstIndex = timeString.indexOf(':');
             int secondIndex = timeString.lastIndexOf(':');
@@ -36,6 +37,8 @@ public class TimeDemo {
             minToHour = (min / 60);
             min2 = (min % 60);
             hour = hour + minToHour;
+            System.out.println(minToHour);
+            System.out.println(min2);
         }
 
         String hString;
@@ -49,7 +52,7 @@ public class TimeDemo {
 
         if (min < 10){
             mString = "0" + String.valueOf(min);
-        } else if (min2 < 10){
+        } else if (min2 < 10 && min2 > 0){
             mString = "0" + String.valueOf(min2);
         } else if (min < 60) {
             mString = String.valueOf(min);
@@ -61,8 +64,8 @@ public class TimeDemo {
 
         if (sec < 10){
             string = "0" + String.valueOf(sec);
-        } else if(sec2 <10){
-            string = "0" + String.valueOf(sec2);
+        } else if(sec2 > 0 && sec2 < 10){
+            string = "1" + String.valueOf(sec2);
         } else if(sec < 60) {
             string = String.valueOf(sec);
         } else if(sec2 < 60){
@@ -75,9 +78,7 @@ public class TimeDemo {
     }
 
     public static void main(String[] args) {
-        String[] timeList={"10:01:01","09:07:11"};
-        getTotal(timeList);
-
+        String[] timeList={"01:119:59","07:02:01"};
         System.out.println(getTotal(timeList));
     }
 }

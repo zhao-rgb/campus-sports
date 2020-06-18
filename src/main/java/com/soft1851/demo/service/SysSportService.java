@@ -30,7 +30,6 @@ public interface SysSportService extends IService<SysSport> {
      * @param userId
      * @return
      */
-    List<SysSportVo> getSumSport(Long userId);
-
+    SysSportVo getSumSport(Long userId);
 
 }

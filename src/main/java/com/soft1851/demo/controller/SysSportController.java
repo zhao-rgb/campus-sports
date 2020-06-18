@@ -55,7 +55,7 @@ public class SysSportController {
      * @return
      */
     @GetMapping("/sumSport")
-    public List<SysSportVo> getSumSport(@Param("userId") Long userId){
+    public SysSportVo getSumSport(@Param("userId") Long userId){
         return sysSportService.getSumSport(userId);
     }
 

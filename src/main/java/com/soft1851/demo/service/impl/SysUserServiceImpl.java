@@ -93,7 +93,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
                     .gmtCreate(LocalDateTime.now())
                     .gmtModified(LocalDateTime.now())
                     .build();
-            sysUserMapper.insert(registerDto1);
+            sysUserMapper.insertUser(registerDto1);
         }
         return true;
     }

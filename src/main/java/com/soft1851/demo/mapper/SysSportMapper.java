@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.soft1851.demo.domain.entity.SysDailySport;
 import com.soft1851.demo.domain.entity.SysSport;
 import com.soft1851.demo.domain.vo.SysSportVo;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -37,6 +38,13 @@ public interface SysSportMapper extends BaseMapper<SysSport> {
      * 查找用户每天运动的步数等（求和）
      * @return
      */
-    List<SysSportVo> sumSport(Long userId);
+    SysSportVo sumSport(Long userId);
 
+    /**
+     * 根据用户id查找今天运动的距离
+     * @param userId
+     * @return
+     */
+    @Select("SELECT * FROM sys_sport WHERE user_id = #{userId} AND TO_DAYS(gmt_create) = TO_DAYS(NOW())")
+    List<SysSport> selectTodayTime(Long userId);
 }

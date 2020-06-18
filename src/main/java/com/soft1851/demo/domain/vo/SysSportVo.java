@@ -1,6 +1,7 @@
 package com.soft1851.demo.domain.vo;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +17,7 @@ import java.sql.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class SysSportVo {
     private Long userId;
     private Integer totalSportNumber;

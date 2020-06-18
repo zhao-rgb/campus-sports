@@ -32,5 +32,7 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
      * @param registerDto
      */
     @Insert("INSERT INTO sys_user(user_account,user_name,user_password,avatar,go_step_number,gmt_create,gmt_modified) VALUES (#{userAccount}, #{userName}, #{userPassword},#{avatar},#{goStepNumber},#{gmtCreate},#{gmtModified})")
-    void insert(RegisterDto registerDto);
+    void insertUser(RegisterDto registerDto);
+
+
 }

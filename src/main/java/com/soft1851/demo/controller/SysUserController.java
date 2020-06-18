@@ -8,9 +8,11 @@ import com.soft1851.demo.domain.dto.SysUserDto;
 import com.soft1851.demo.domain.entity.SysUser;
 import com.soft1851.demo.service.SysUserService;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +26,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/sysUser")
+@Validated
 public class SysUserController {
 
     @Resource
@@ -65,7 +68,7 @@ public class SysUserController {
      * @return
      */
     @PostMapping("/register")
-    public ResponseResult addRole(@RequestBody RegisterDto registerDto) {
+    public ResponseResult addRole(@RequestBody @Valid RegisterDto registerDto) {
         return ResponseResult.success(sysUserService.register(registerDto));
     }
 

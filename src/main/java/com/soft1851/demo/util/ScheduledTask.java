@@ -1,6 +1,7 @@
 package com.soft1851.demo.util;
 
 import com.soft1851.demo.domain.entity.SysDailySport;
+import com.soft1851.demo.domain.entity.SysSport;
 import com.soft1851.demo.mapper.SysDailySportMapper;
 import com.soft1851.demo.mapper.SysSportMapper;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -36,6 +37,12 @@ public class ScheduledTask {
         } else {
             List<SysDailySport> list = new ArrayList<>();
             for (SysDailySport sysDailySport: sysDailySports){
+                List<SysSport> sysSports = sysSportMapper.selectTodayTime(sysDailySport.getUserId());
+                String[] timeList = new String[sysSports.size()];
+                for (int i = 0; i < sysSports.size(); i++) {
+                    timeList[i] = sysSports.get(i).getSportTime();
+                }
+                sysDailySport.setTotalSportTime(TimeDemo.getTotal(timeList));
                 list.add(sysDailySport);
                 System.out.println(list);
             }
