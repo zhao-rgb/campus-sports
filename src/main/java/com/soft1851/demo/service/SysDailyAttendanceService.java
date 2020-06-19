@@ -19,4 +19,12 @@ public interface SysDailyAttendanceService extends IService<SysDailyAttendance> 
      * @return
      */
     boolean updateOrInsert(SysDailyAttendance sysDailyAttendance);
+
+    /**
+     * 根据userId，type去查
+     * @param userId
+     * @param type
+     * @return
+     */
+    SysDailyAttendance selectUserIdAndType(Long userId, String type);
 }

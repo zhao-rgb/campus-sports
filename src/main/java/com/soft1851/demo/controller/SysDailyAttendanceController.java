@@ -3,10 +3,8 @@ package com.soft1851.demo.controller;
 import com.soft1851.demo.common.ResponseResult;
 import com.soft1851.demo.domain.entity.SysDailyAttendance;
 import com.soft1851.demo.service.SysDailyAttendanceService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -33,5 +31,14 @@ public class SysDailyAttendanceController {
     @PostMapping("/updateOrInsert")
     public ResponseResult updateInfo(@RequestBody SysDailyAttendance sysDailyAttendance) {
         return ResponseResult.success(sysDailyAttendanceService.updateOrInsert(sysDailyAttendance));
+    }
+
+    /**
+     * 根据userId，type去查
+     * @return
+     */
+    @GetMapping("/getDailyArray")
+    public SysDailyAttendance getDailyArray(@Param("userId") Long userId, @Param("type") String type) {
+        return sysDailyAttendanceService.selectUserIdAndType(userId,type);
     }
 }

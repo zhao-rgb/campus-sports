@@ -38,4 +38,9 @@ public class SysDailyAttendanceServiceImpl extends ServiceImpl<SysDailyAttendanc
         return true;
 
     }
+
+    @Override
+    public SysDailyAttendance selectUserIdAndType(Long userId, String type) {
+        return sysDailyAttendanceMapper.selectType(userId,type);
+    }
 }
