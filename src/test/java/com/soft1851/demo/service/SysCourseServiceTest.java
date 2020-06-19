@@ -28,4 +28,9 @@ class SysCourseServiceTest {
         List<SysCourse> maps = sysCourseService.blurSelect("体能");
         System.out.println(maps);
     }
+
+//    @Test
+//    void batchInsert() {
+//        boolean ints = sysCourseService.saveBatch(CourseSpider.getCourses());
+//    }
 }
