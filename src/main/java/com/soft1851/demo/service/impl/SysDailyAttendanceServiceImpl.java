@@ -32,7 +32,7 @@ public class SysDailyAttendanceServiceImpl extends ServiceImpl<SysDailyAttendanc
             return true;
         }
         UpdateWrapper<SysDailyAttendance> updateWrapper = new UpdateWrapper<>();
-        updateWrapper.eq("user_id",sysDailyAttendance.getUserId());
+        updateWrapper.eq("user_id",sysDailyAttendance.getUserId()).eq("type",sysDailyAttendance.getType());
         sysDailyAttendances.setDailyArray(sysDailyAttendance.getDailyArray());
         sysDailyAttendanceMapper.update(sysDailyAttendances,updateWrapper);
         return true;
