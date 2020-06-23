@@ -32,6 +32,8 @@ public class SysUserDto {
     private Long goStepTime;
     private String signature;
     private Long dailyAttendance;
+    private String height;
+    private String weight;
     /**
      * 更新时间
      */

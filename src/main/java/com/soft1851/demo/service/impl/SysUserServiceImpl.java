@@ -72,6 +72,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         sysUser.setGoStepTime(sysUserDto.getGoStepTime());
         sysUser.setSignature(sysUserDto.getSignature());
         sysUser.setDailyAttendance(sysUserDto.getDailyAttendance());
+        sysUser.setHeight(sysUserDto.getHeight());
+        sysUser.setWeight(sysUserDto.getWeight());
         sysUser.setGmtModified(sysUserDto.getGmtModified());
         sysUserMapper.update(sysUser,updateWrapper);
         return true;

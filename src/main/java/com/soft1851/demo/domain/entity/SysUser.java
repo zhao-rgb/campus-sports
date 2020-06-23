@@ -122,6 +122,18 @@ public class SysUser extends Model<SysUser> {
     private Long dailyAttendance;
 
     /**
+     * 身高
+     */
+    @TableField("height")
+    private String height;
+
+    /**
+     * 体重
+     */
+    @TableField("weight")
+    private String weight;
+
+    /**
      * 创建时间
      */
     @TableField(fill = FieldFill.INSERT)

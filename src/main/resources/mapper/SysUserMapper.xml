@@ -19,13 +19,15 @@
         <result column="follow" property="follow" />
         <result column="fans" property="fans" />
         <result column="daily_attendance" property="dailyAttendance" />
+        <result column="height" property="height" />
+        <result column="weight" property="weight" />
         <result column="gmt_create" property="gmtCreate" />
         <result column="gmt_modified" property="gmtModified" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_account, user_name, user_password, salt, address, gender, avatar, step_number, go_step_number, go_step_time, signature, follow, fans, daily_attendance, gmt_create, gmt_modified
+        id, user_account, user_name, user_password, salt, address, gender, avatar, step_number, go_step_number, go_step_time, signature, follow, fans, daily_attendance, height, weight, gmt_create, gmt_modified
     </sql>
 
 </mapper>
