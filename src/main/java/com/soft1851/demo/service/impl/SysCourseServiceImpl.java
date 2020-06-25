@@ -43,7 +43,7 @@ public class SysCourseServiceImpl extends ServiceImpl<SysCourseMapper, SysCourse
     public List<SysCourse> blurSelect(String field) {
         QueryWrapper<SysCourse> wrapper = new QueryWrapper<>();
         wrapper.like("course_name", field)
-                .or().like("type", field);
+                .or().like("type", field).orderByDesc("fat_burning");
         return sysCourseMapper.selectList(wrapper);
     }
 

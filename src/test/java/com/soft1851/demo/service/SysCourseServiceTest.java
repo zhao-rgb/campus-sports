@@ -31,6 +31,6 @@ class SysCourseServiceTest {
 
 //    @Test
 //    void batchInsert() {
-//        boolean ints = sysCourseService.saveBatch(CourseSpider.getCourses());
+//        boolean ints = sysCourseService.saveBatch(Spider.getCourses());
 //    }
 }
